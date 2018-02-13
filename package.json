@@ -1,0 +1,54 @@
+{
+  "name": "davs-extension",
+  "displayName": "davs-extension",
+  "description": "Opionated tool for structuring and building react applications",
+  "version": "0.0.1",
+  "publisher": "davidual",
+  "engines": {
+    "vscode": "^1.20.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.generate",
+    "onCommand:extension.generateComponent"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.generate",
+        "title": "Davs Extension: Generate"
+      },
+      {
+        "command": "extension.generateComponent",
+        "title": "Generate Component"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.generateComponent",
+          "group": "navigation@davs-extension"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6",
+    "@types/node": "^7.0.43",
+    "@types/mocha": "^2.2.42"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  }
+}

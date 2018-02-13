@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\David\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'watch' ]
+2 info using npm@4.1.2
+3 info using node@v8.2.1
+4 verbose run-script [ 'prewatch', 'watch', 'postwatch' ]
+5 info lifecycle davs-extension@0.0.1~prewatch: davs-extension@0.0.1
+6 silly lifecycle davs-extension@0.0.1~prewatch: no script for prewatch, continuing
+7 info lifecycle davs-extension@0.0.1~watch: davs-extension@0.0.1
+8 verbose lifecycle davs-extension@0.0.1~watch: unsafe-perm in lifecycle true
+9 verbose lifecycle davs-extension@0.0.1~watch: PATH: C:\Users\David\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;C:\Users\David\.vscode\extensions\davs-extension\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Oculus\Support\oculus-runtime;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin;C:\Users\David\AppData\Local\Microsoft\WindowsApps;C:\Users\David\AppData\Local\Android\sdk\tools;C:\Users\David\AppData\Local\Android\sdk\platform-tools;C:\Users\David\AppData\Local\Programs\Python\Python35-32;C:\Users\David\AppData\Roaming\npm;C:\Users\David\AppData\Local\atom\bin;C:\Users\David\AppData\Local\Yarn\bin;C:\Users\David\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin
+10 verbose lifecycle davs-extension@0.0.1~watch: CWD: C:\Users\David\.vscode\extensions\davs-extension
+11 silly lifecycle davs-extension@0.0.1~watch: Args: [ '/d /s /c', 'tsc -watch -p ./' ]
+12 verbose stack Error: kill ENOSYS
+12 verbose stack     at exports._errnoException (util.js:1024:11)
+12 verbose stack     at process.kill (internal/process.js:183:13)
+12 verbose stack     at process.listener (C:\Users\David\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:95:15)
+12 verbose stack     at emitNone (events.js:105:13)
+12 verbose stack     at process.emit (events.js:207:7)
+12 verbose stack     at processEmit (C:\Users\David\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:155:32)
+12 verbose stack     at Signal.wrap.onsignal (internal/process.js:209:44)
+13 verbose cwd C:\Users\David\.vscode\extensions\davs-extension
+14 error Windows_NT 10.0.16299
+15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\David\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "run" "watch"
+16 error node v8.2.1
+17 error npm  v4.1.2
+18 error code ENOSYS
+19 error errno ENOSYS
+20 error syscall kill
+21 error kill ENOSYS
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]
