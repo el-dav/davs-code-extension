@@ -9,42 +9,47 @@ const DUCKS_PATH = '/src/ducks/';
 
 const ucfirst = word => word.charAt(0).toUpperCase() + word.slice(1);
 
-const getActions = () => (
-`import { ACTION_NAME } from './constants';
+const getActions = () =>
+  `import { ACTION_NAME } from './constants';
 
 export const actionName  = () => ({
   type: ACTION_NAME,
 });
-`
-);
+`;
 
 const getConstants = (name: string) => {
-    const projectPath = workspace.workspaceFolders[0].uri.fsPath.split('\\').join('/');
-    const parts = projectPath.split('/');
-    const projectName = parts[parts.length];
+  const projectPath = workspace.workspaceFolders[0].uri.fsPath
+    .split('\\')
+    .join('/');
+  const parts = projectPath.split('/');
+  const projectName = parts[parts.length - 1];
 
-    return `export const ACTION_NAME = '${projectName}/${name}/ACTION_NAME';
-`
+  return `export const ACTION_NAME = '${projectName}/${name}/ACTION_NAME';
+`;
 };
 
-const getEpics = () => (
-`import 'rxjs/add/operator/ignoreElements';
-import { combineEpics } from 'redux-observable';
+const getEpics = () =>
+  `import { ofType, combineEpics } from 'redux-observable';
+import { ignoreElements } from 'rxjs/operators/ignoreElements';
 
-const initial = action$ => (
-  action$.ignoreElements()
-);
+const initial = action$ =>
+  action$.pipe(
+    ignoreElements()
+  );
 
 export default combineEpics(initial);
-`
-);
+`;
 
-const getReducers = (name: string) => (
-`import { ACTION_NAME } from './constants';
+const getReducers = (name: string) =>
+  `import { ACTION_NAME } from './constants';
 
-const initialState = {};
+export type State = Readonly<{
+     
+}>
 
-const ${name} = (state = initialState, action) => {
+const initialState: State = {};
+
+const ${name} = (state = initialState, action): State => {
   switch (action.type) {
     case ACTION_NAME:
       return { ...state };
@@ -54,64 +59,57 @@ const ${name} = (state = initialState, action) => {
 };
 
 export default ${name};
-`
-);
+`;
 
-const getSelectors = (name: string) => (
-`// import { createSelector } from 'reselect';
+const getSelectors = (name: string) =>
+  `import { createSelector } from 'reselect';
 
-export const select${ucfirst(name)}State = state => state.${name};
-`
-);
+import { State } from './reducers';
+
+const selectState = (state): State => state.${name};
+
+export const select${ucfirst(
+    name
+  )}State = createSelector([selectState], state => state);
+`;
 
 export const create = (name: string) => {
-    const projectRoot = workspace.workspaceFolders[0].uri.fsPath;
-    const path = `${projectRoot}${DUCKS_PATH}${name}/`.split('\\').join('/');
+  const projectRoot = workspace.workspaceFolders[0].uri.fsPath;
+  const path = `${projectRoot}${DUCKS_PATH}${name}/`.split('\\').join('/');
 
-    const actionsPath = `${path}actions.tsx`;
-    const constantsPath = `${path}constants.tsx`;
-    const epicsPath = `${path}epics.tsx`;
-    const reducersPath = `${path}reducers.tsx`;
-    const selectorsPath = `${path}selectors.tsx`;
+  const actionsPath = `${path}actions.tsx`;
+  const constantsPath = `${path}constants.tsx`;
+  const epicsPath = `${path}epics.tsx`;
+  const reducersPath = `${path}reducers.tsx`;
+  const selectorsPath = `${path}selectors.tsx`;
 
+  try {
+    makeFileSync(actionsPath);
+    writeFileSync(actionsPath, getActions());
 
-    try {
-        makeFileSync(actionsPath);
-        writeFileSync(
-            actionsPath,
-            getActions()
-        );
+    makeFileSync(constantsPath);
+    writeFileSync(constantsPath, getConstants(name));
 
-        makeFileSync(constantsPath);
-        writeFileSync(
-            constantsPath,
-            getConstants(name)
-        );
+    makeFileSync(epicsPath);
+    writeFileSync(epicsPath, getEpics());
 
-        makeFileSync(epicsPath);
-        writeFileSync(
-            epicsPath,
-            getEpics()
-        );
+    makeFileSync(reducersPath);
+    writeFileSync(reducersPath, getReducers(name));
 
-        makeFileSync(reducersPath);
-        writeFileSync(
-            reducersPath,
-            getReducers(name)
-        );
+    makeFileSync(selectorsPath);
+    writeFileSync(selectorsPath, getSelectors(name));
 
-        makeFileSync(selectorsPath);
-        writeFileSync(
-            selectorsPath,
-            getSelectors(name)
-        );
-
-        return {
-            message: 'Remember to add reference to duck and epic',
-            files: [actionsPath, constantsPath, epicsPath, reducersPath, selectorsPath]
-        };
-    }
-    catch (e) {
-        window.showErrorMessage(e);
-    }
-}
+    return {
+      message: 'Remember to add reference to duck and epic',
+      files: [
+        actionsPath,
+        constantsPath,
+        epicsPath,
+        reducersPath,
+        selectorsPath,
+      ],
+    };
+  } catch (e) {
+    window.showErrorMessage(e);
+  }
+};

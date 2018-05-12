@@ -13,23 +13,36 @@
 9 verbose lifecycle davs-extension@0.0.1~watch: PATH: C:\Users\David\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;C:\Users\David\.vscode\extensions\davs-extension\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Oculus\Support\oculus-runtime;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin;C:\Users\David\AppData\Local\Microsoft\WindowsApps;C:\Users\David\AppData\Local\Android\sdk\tools;C:\Users\David\AppData\Local\Android\sdk\platform-tools;C:\Users\David\AppData\Local\Programs\Python\Python35-32;C:\Users\David\AppData\Roaming\npm;C:\Users\David\AppData\Local\atom\bin;C:\Users\David\AppData\Local\Yarn\bin;C:\Users\David\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin
 10 verbose lifecycle davs-extension@0.0.1~watch: CWD: C:\Users\David\.vscode\extensions\davs-extension
 11 silly lifecycle davs-extension@0.0.1~watch: Args: [ '/d /s /c', 'tsc -watch -p ./' ]
-12 verbose stack Error: kill ENOSYS
-12 verbose stack     at exports._errnoException (util.js:1024:11)
-12 verbose stack     at process.kill (internal/process.js:183:13)
-12 verbose stack     at process.listener (C:\Users\David\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:95:15)
-12 verbose stack     at emitNone (events.js:105:13)
-12 verbose stack     at process.emit (events.js:207:7)
-12 verbose stack     at processEmit (C:\Users\David\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:155:32)
-12 verbose stack     at Signal.wrap.onsignal (internal/process.js:209:44)
-13 verbose cwd C:\Users\David\.vscode\extensions\davs-extension
-14 error Windows_NT 10.0.16299
-15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\David\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "run" "watch"
-16 error node v8.2.1
-17 error npm  v4.1.2
-18 error code ENOSYS
-19 error errno ENOSYS
-20 error syscall kill
-21 error kill ENOSYS
-22 error If you need help, you may report this error at:
-22 error     <https://github.com/npm/npm/issues>
-23 verbose exit [ 1, true ]
+12 silly lifecycle davs-extension@0.0.1~watch: Returned: code: 3221225786  signal: null
+13 info lifecycle davs-extension@0.0.1~watch: Failed to exec watch script
+14 verbose stack Error: davs-extension@0.0.1 watch: `tsc -watch -p ./`
+14 verbose stack Exit status 3221225786
+14 verbose stack     at EventEmitter.<anonymous> (C:\Users\David\AppData\Roaming\npm\node_modules\npm\lib\utils\lifecycle.js:279:16)
+14 verbose stack     at emitTwo (events.js:125:13)
+14 verbose stack     at EventEmitter.emit (events.js:213:7)
+14 verbose stack     at ChildProcess.<anonymous> (C:\Users\David\AppData\Roaming\npm\node_modules\npm\lib\utils\spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:125:13)
+14 verbose stack     at ChildProcess.emit (events.js:213:7)
+14 verbose stack     at maybeClose (internal/child_process.js:921:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+15 verbose pkgid davs-extension@0.0.1
+16 verbose cwd C:\Users\David\.vscode\extensions\davs-extension
+17 error Windows_NT 10.0.16299
+18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\David\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "run" "watch"
+19 error node v8.2.1
+20 error npm  v4.1.2
+21 error code ELIFECYCLE
+22 error davs-extension@0.0.1 watch: `tsc -watch -p ./`
+22 error Exit status 3221225786
+23 error Failed at the davs-extension@0.0.1 watch script 'tsc -watch -p ./'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the davs-extension package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     tsc -watch -p ./
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs davs-extension
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls davs-extension
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
