@@ -51,15 +51,20 @@ const ${name} = ({ className }: Props) => (
 export default ${name};
 `;
 
+const getIndex = (name: string) =>
+  `import ${name} from './${name}.cnt;
+
+export default ${name};
+`;
+
 export const create = (name: string, path: string) => {
   const projectRoot = workspace.workspaceFolders[0].uri.fsPath;
-  const componentPath = `${projectRoot}${path}${name}/${name}`
-    .split('\\')
-    .join('/');
+  const componentPath = `${projectRoot}${path}${name}/`.split('\\').join('/');
 
-  const typPath = `${componentPath}.typ.tsx`;
-  const cntPath = `${componentPath}.cnt.tsx`;
-  const cmpPath = `${componentPath}.cmp.tsx`;
+  const typPath = `${componentPath}${name}.typ.tsx`;
+  const cntPath = `${componentPath}${name}.cnt.tsx`;
+  const cmpPath = `${componentPath}${name}.cmp.tsx`;
+  const indexPath = `${componentPath}index.tsx`;
 
   try {
     makeFileSync(typPath);
@@ -70,6 +75,9 @@ export const create = (name: string, path: string) => {
 
     makeFileSync(cmpPath);
     writeFileSync(cmpPath, getCmp(name));
+
+    makeFileSync(indexPath);
+    writeFileSync(indexPath, getIndex(name));
 
     return {
       files: [typPath, cntPath, cmpPath],

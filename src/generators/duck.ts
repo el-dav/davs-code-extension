@@ -15,6 +15,8 @@ const getActions = () =>
 export const actionName  = () => ({
   type: ACTION_NAME,
 });
+
+export type Action = ReturnType<typeof actionName>
 `;
 
 const getConstants = (name: string) => {
@@ -29,7 +31,7 @@ const getConstants = (name: string) => {
 };
 
 const getEpics = () =>
-  `import { ofType, combineEpics } from 'redux-observable';
+  `import { /* ofType, */ combineEpics } from 'redux-observable';
 import { ignoreElements } from 'rxjs/operators/ignoreElements';
 
 const initial = action$ =>
@@ -41,7 +43,8 @@ export default combineEpics(initial);
 `;
 
 const getReducers = (name: string) =>
-  `import { ACTION_NAME } from './constants';
+  `import { Action } from './actions';
+import { ACTION_NAME } from './constants';
 
 export type State = Readonly<{
      
@@ -49,7 +52,7 @@ export type State = Readonly<{
 
 const initialState: State = {};
 
-const ${name} = (state = initialState, action): State => {
+const ${name} = (state = initialState, action: Action): State => {
   switch (action.type) {
     case ACTION_NAME:
       return { ...state };
