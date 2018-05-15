@@ -52,7 +52,7 @@ export default ${name};
 `;
 
 const getIndex = (name: string) =>
-  `import ${name} from './${name}.cnt;
+  `import ${name} from './${name}.cnt';
 
 export default ${name};
 `;

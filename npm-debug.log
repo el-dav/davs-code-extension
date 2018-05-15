@@ -10,7 +10,7 @@
 6 silly lifecycle davs-extension@0.0.1~prewatch: no script for prewatch, continuing
 7 info lifecycle davs-extension@0.0.1~watch: davs-extension@0.0.1
 8 verbose lifecycle davs-extension@0.0.1~watch: unsafe-perm in lifecycle true
-9 verbose lifecycle davs-extension@0.0.1~watch: PATH: C:\Users\David\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;C:\Users\David\.vscode\extensions\davs-extension\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Oculus\Support\oculus-runtime;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin;C:\Users\David\AppData\Local\Microsoft\WindowsApps;C:\Users\David\AppData\Local\Android\sdk\tools;C:\Users\David\AppData\Local\Android\sdk\platform-tools;C:\Users\David\AppData\Local\Programs\Python\Python35-32;C:\Users\David\AppData\Roaming\npm;C:\Users\David\AppData\Local\atom\bin;C:\Users\David\AppData\Local\Yarn\bin;C:\Users\David\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin
+9 verbose lifecycle davs-extension@0.0.1~watch: PATH: C:\Users\David\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;C:\Users\David\.vscode\extensions\davs-extension\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Oculus\Support\oculus-runtime;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin;C:\WINDOWS\System32\OpenSSH\;C:\Users\David\AppData\Local\Microsoft\WindowsApps;C:\Users\David\AppData\Local\Android\sdk\tools;C:\Users\David\AppData\Local\Android\sdk\platform-tools;C:\Users\David\AppData\Local\Programs\Python\Python35-32;C:\Users\David\AppData\Roaming\npm;C:\Users\David\AppData\Local\atom\bin;C:\Users\David\AppData\Local\Yarn\bin;C:\Users\David\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin
 10 verbose lifecycle davs-extension@0.0.1~watch: CWD: C:\Users\David\.vscode\extensions\davs-extension
 11 silly lifecycle davs-extension@0.0.1~watch: Args: [ '/d /s /c', 'tsc -watch -p ./' ]
 12 silly lifecycle davs-extension@0.0.1~watch: Returned: code: 3221225786  signal: null
@@ -27,7 +27,7 @@
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
 15 verbose pkgid davs-extension@0.0.1
 16 verbose cwd C:\Users\David\.vscode\extensions\davs-extension
-17 error Windows_NT 10.0.16299
+17 error Windows_NT 10.0.17134
 18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\David\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "run" "watch"
 19 error node v8.2.1
 20 error npm  v4.1.2
